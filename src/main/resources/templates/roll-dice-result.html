@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #correct {color: green;}
+        #incorrect {color: red;}
+    </style>
+
+</head>
+<body>
+
+<h2>You selected number <span th:text="${number}"></span></h2>
+
+ <div th:if="${numMatch}">
+     <h3 id = correct>Congrats <span th:text="${number}"></span> was the correct answer</h3>
+ </div>
+
+<div th:unless="${numMatch}">
+    <h3 id="incorrect">Sorry the correct answer was <span th:text="${random}"></span></h3>
+</div>
+
+
+<div th:replace="partials/footer.html :: footer"></div>
+</body>
+</html>
