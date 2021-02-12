@@ -75,8 +75,7 @@ public class PostController {
     public String deleteForm(@ModelAttribute("delete") Post post, Model model) {
 
         postsDao.deleteById(post.getId());
-        model.addAttribute("title", post.getTitle());
-        return "posts/delete";
+        return "redirect:/posts";
     }
 
 
