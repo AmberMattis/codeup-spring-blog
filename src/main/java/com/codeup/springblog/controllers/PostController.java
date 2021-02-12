@@ -17,8 +17,6 @@ public class PostController {
     }
 
 
-
-
     @GetMapping("/posts")
     public String showPosts(Model model){
 
@@ -28,8 +26,6 @@ public class PostController {
         return "posts/index";
 
     }
-
-
 
 
     @GetMapping("/posts/{id}")
@@ -56,24 +52,8 @@ public class PostController {
     }
 
 
-
-//    @GetMapping("/posts/delete")
-//    public String viewFormDelete(Model model){
-//        model.addAttribute("post", postsDao.deleteById());
-//        return "post/index";
-//    }
-
-
-//    @PostMapping("/posts/delete")
-//    public String deleteForm(@ModelAttribute("post") Post post) {
-//     postsDao.deleteById(post.getId());
-//    return "posts/index";
-//    }
-
-
     @PostMapping("/posts/delete")
-    public String deleteForm(@ModelAttribute("delete") Post post, Model model) {
-
+    public String deletePost(@ModelAttribute("delete") Post post) {
         postsDao.deleteById(post.getId());
         return "redirect:/posts";
     }
