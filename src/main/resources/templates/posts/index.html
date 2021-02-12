@@ -15,6 +15,21 @@
     <div th:each="post : ${posts}">
         <h2 th:text="${post.title}"></h2>
         <h3 th:text="${post.body}"></h3>
+<!--        <form action="#" th:action="@{/posts}" th:object="${Post}" method="post">-->
+<!--            <button name="edit">Edit</button>-->
+<!--            <button name="delete">Delete</button>-->
+<!--        </form>-->
+    </div>
+
+    <div>
+        <h2>Add Your BLog</h2>
+        <form>
+            <label for="title">Title</label>
+            <input name="title" type="text" id="title" placeholder="Your Title" >
+            <label for="body">Blog</label>
+            <textarea name="body" type="text" id="body" placeholder="Your Blog"></textarea>
+            <button>Submit Blog</button>
+        </form>
     </div>
 
     <div th:replace="partials/footer.html :: footer"></div>

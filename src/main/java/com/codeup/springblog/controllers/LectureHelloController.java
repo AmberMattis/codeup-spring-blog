@@ -1,4 +1,4 @@
-package com.codeup.springblog.cotrollers;
+package com.codeup.springblog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

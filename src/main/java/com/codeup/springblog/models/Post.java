@@ -6,10 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="posts")
 public class Post  {
-//    private String title;
-//    private String body;
-//    private Long id;
-//
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,13 +18,7 @@ public class Post  {
     private String body;
 
 
-
-
-
-
-
     public Post(){}
-
 
 
     public Post( String title, String body, Long id) {

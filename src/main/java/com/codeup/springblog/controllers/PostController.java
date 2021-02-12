@@ -1,4 +1,4 @@
-package com.codeup.springblog.cotrollers;
+package com.codeup.springblog.controllers;
 
 import com.codeup.springblog.models.Post;
 import com.codeup.springblog.repositories.PostRepository;
@@ -6,33 +6,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class PostController {
-    private final PostRepository postDao;
+    private final PostRepository postsDao;
 
     public PostController(PostRepository postDao) {
-        this.postDao = postDao;
+        this.postsDao = postDao;
     }
 
 
     @GetMapping("/posts")
-    public String post(Model model) {
-        Post post1 = new Post("My first post", "This is my first post", 1L);
-        Post post2 = new Post("My second post","This is my second post", 2L);
-        Post post3 = new Post("My third post", "This is my third post", 2L);
-
-        List<Post> allPosts = new ArrayList<>();
-        allPosts.add(post1);
-        allPosts.add(post2);
-        allPosts.add(post3);
+    public String showPosts(Model model){
 
         model.addAttribute("title", "All Posts");
-        model.addAttribute("posts", allPosts);
+        model.addAttribute("posts", postsDao.findAll());
 
         return "posts/index";
+
     }
 
 
@@ -57,8 +47,12 @@ public class PostController {
     @PostMapping("/posts/create")
     @ResponseBody
     public String createForm() {
+
         return "Create a new posts";
     }
+
+
+
 
 
 
