@@ -29,10 +29,9 @@ public class PostController {
 
 
     @GetMapping("/posts/{id}")
-    public String postById(Model model) {
-        Post post1 = new Post("My first post", "This is my first post", 1L);
-        model.addAttribute("title", "Specific Post");
-        model.addAttribute("post", post1);
+    public String postById(@PathVariable long id, Model model) {
+        Post post = postsDao.getOne(id);
+        model.addAttribute("post", post);
         return "posts/show";
     }
 
@@ -52,26 +51,35 @@ public class PostController {
     }
 
 
-    @PostMapping("/posts/delete")
-    public String deletePost(@ModelAttribute("delete") Post post) {
-        postsDao.deleteById(post.getId());
+    @GetMapping("/posts/{id}/edit")
+    public String viewEditForm(@PathVariable long id,  Model model) {
+        model.addAttribute("post", postsDao.getOne(id));
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/{id}/edit")
+    public String editPost(@PathVariable long id, @RequestParam String title, @RequestParam String body, Model model){
+        Post post = new Post(title, body,id);
+        postsDao.save(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/posts/{id}/delete")
+    public String deletePost(@PathVariable long id) {
+        postsDao.deleteById(id);
         return "redirect:/posts";
     }
 
 
 
 
-    @GetMapping("/posts/edit")
-    @ResponseBody
-    public String viewFormEdit(){
-        return "View form for editing a post";
-    }
 
-    @PostMapping("/posts/edit")
-    @ResponseBody
-    public String editForm(){
-        return "Edit existing post";
-    }
+//    @PostMapping("/posts/edit")
+//    @ResponseBody
+//    public String postUpdatedForm(@ModelAttribute("edit") Post post ){
+//
+//        return "return updated post";
+//    }
 
 
 
