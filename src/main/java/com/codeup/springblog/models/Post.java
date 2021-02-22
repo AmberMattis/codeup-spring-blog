@@ -17,14 +17,18 @@ public class Post  {
     @Column(nullable = false, length = 10000)
     private String body;
 
+    @ManyToOne
+    private User user;
+
 
     public Post(){}
 
 
-    public Post( String title, String body, Long id) {
+    public Post( String title, String body, Long id, User user) {
         this.title = title;
         this.body = body;
         this.id = id;
+        this.user = user;
     }
 
     public String getBody() {
@@ -49,5 +53,13 @@ public class Post  {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

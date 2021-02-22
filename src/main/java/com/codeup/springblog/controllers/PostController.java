@@ -1,7 +1,9 @@
 package com.codeup.springblog.controllers;
 
 import com.codeup.springblog.models.Post;
+import com.codeup.springblog.models.User;
 import com.codeup.springblog.repositories.PostRepository;
+import com.codeup.springblog.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +13,11 @@ public class PostController {
 
 
     private final PostRepository postsDao;
+    private final UserRepository usersDao;
 
-    public PostController(PostRepository postDao) {
+    public PostController(PostRepository postDao, UserRepository usersDao) {
         this.postsDao = postDao;
+        this.usersDao = usersDao;
     }
 
 
@@ -58,8 +62,8 @@ public class PostController {
     }
 
     @PostMapping("/posts/{id}/edit")
-    public String editPost(@PathVariable long id, @RequestParam String title, @RequestParam String body, Model model){
-        Post post = new Post(title, body,id);
+    public String editPost(@PathVariable long id, @RequestParam String title, @RequestParam String body, @RequestParam User author, Model model){
+        Post post = new Post(title, body, id, author);
         postsDao.save(post);
         return "redirect:/posts";
     }
