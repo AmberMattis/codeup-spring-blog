@@ -12,9 +12,21 @@
 
     <h1 th:text="${title}"></h1>
 
-    <div th:each="post : ${posts}">
-        <a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a>
-        <h3 th:text="${post.body}"></h3>
+<!--    <div th:each="post : ${posts}">-->
+<!--        <a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a>-->
+<!--        <h3 th:text="${post.body}"></h3>-->
+<!--    </div>-->
+
+    <div th:each="user : ${users}">
+        <a th:text="${user.post.title}" th:href="@{|/posts/${post.id}|}"></a>
+        <h3 th:text="${user.post.body}"></h3>
+        <p th:text="${user.post.id}"></p>
+    </div>
+
+    <div th:replace="partials/footer.html :: footer"></div>
+</body>
+</html>
+
 <!--        <form  action="#" th:action="@{posts/edit}" method="post" th:object="${post}">-->
 <!--            <button>Edit</button>-->
 <!--        </form>-->
@@ -22,8 +34,3 @@
 <!--            <input name="id" th:value="${post.getId()}">-->
 <!--            <button type="submit">Delete</button>-->
 <!--        </form>-->
-    </div>
-
-    <div th:replace="partials/footer.html :: footer"></div>
-</body>
-</html>
