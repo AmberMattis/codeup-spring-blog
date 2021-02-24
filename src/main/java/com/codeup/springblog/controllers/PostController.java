@@ -23,22 +23,10 @@ public class PostController {
 
     @GetMapping("/posts")
     public String showPosts(Model model){
-        User user = (User)usersDao.getOne(1L);
-        Post post5 = new Post();
-        post5.setTitle("This is a Test");
-        post5.setBody("This is a test to see if we can link the user's id to a post");
-        post5.setId(20L);
 
-
-        model.addAttribute("title", "User Post");
+        model.addAttribute("title", "All Posts");
         model.addAttribute("posts", postsDao.findAll());
-        model.addAttribute("user", user);
 
-
-//
-//        model.addAttribute("title", "All Posts");
-//        model.addAttribute("posts", postsDao.findAll());
-//
         return "posts/index";
 
     }
@@ -75,7 +63,7 @@ public class PostController {
 
     @PostMapping("/posts/{id}/edit")
     public String editPost(@PathVariable long id, @RequestParam String title, @RequestParam String body, @RequestParam User user, Model model){
-        Post post = new Post(title, body, id, user);
+        Post post = new Post(title, body, id);
         postsDao.save(post);
         return "redirect:/posts";
     }

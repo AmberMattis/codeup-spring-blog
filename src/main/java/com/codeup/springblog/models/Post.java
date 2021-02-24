@@ -24,11 +24,11 @@ public class Post  {
     public Post(){}
 
 
-    public Post( String title, String body, Long id, User user) {
+    public Post( String title, String body, Long id) {
         this.title = title;
         this.body = body;
         this.id = id;
-        this.user = user;
+
     }
 
     public String getBody() {

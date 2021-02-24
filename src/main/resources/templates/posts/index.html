@@ -17,10 +17,10 @@
 <!--        <h3 th:text="${post.body}"></h3>-->
 <!--    </div>-->
 
-    <div th:each="user : ${users}">
-        <a th:text="${user.post.title}" th:href="@{|/posts/${post.id}|}"></a>
-        <h3 th:text="${user.post.body}"></h3>
-        <p th:text="${user.post.id}"></p>
+    <div th:each="post : ${posts}">
+        <a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a>
+        <h3 th:text="${post.body}"></h3>
+<!--        <p th:text="${post.user.id}"></p>-->
     </div>
 
     <div th:replace="partials/footer.html :: footer"></div>

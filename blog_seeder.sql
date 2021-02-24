@@ -17,9 +17,9 @@ VALUE ( 'The Nice Blogger','Hello, I am the nice blogger, I hope you like my blo
 
 
 
-Select * from posts;
 
-DROP table if exists posts;
+
+
 
 
 

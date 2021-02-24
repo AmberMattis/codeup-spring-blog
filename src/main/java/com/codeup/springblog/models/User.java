@@ -25,12 +25,11 @@ public class User {
 
     public User(){}
 
-    public User(Long id, String username, String email, String password, List<Post> posts){
+    public User(Long id, String username, String email, String password){
         this.id = id;
         this.username = username;
         this. email = email;
         this.password = password;
-        this.posts = posts;
     }
 
     public Long getId() {
