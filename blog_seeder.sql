@@ -17,9 +17,12 @@ VALUE ( 'The Nice Blogger','Hello, I am the nice blogger, I hope you like my blo
 
 
 
+INSERT INTO users(id,email,username,password)
+VALUE ( 1, 'amber@email.com', 'amber', 'password');
 
+SELECT * FROM users;
 
-
+SELECT * FROM posts;
 
 
 
