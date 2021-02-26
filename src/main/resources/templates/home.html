@@ -9,21 +9,18 @@
     <div th:replace="partials/header.html :: navbar"></div>
     <div class="parallax-container">
         <div class="parallax">
-            <img th:src="@{../static/img/spring-tractor.jpg}" alt="spring-backdrop">
+            <img th:src="@{../static/img/greenspring.jpg}" alt="spring-backdrop" class="responsive-img">
         </div>
+        <h1>This is the Landing Page</h1>
     </div>
-    <h1>This is the Landing Page</h1>
+
 
 
 
     <div th:include="partials/footer.html :: footer"></div>
 
-    <div th:replace="partials/scripts.html::scripts"></div>
-    <script>
-        $(document).ready(function(){
-            $('.parallax').parallax();
-        });
-    </script>
+    <div th:replace="partials/scripts.html::scripts">
+    </div>
 
 
 
