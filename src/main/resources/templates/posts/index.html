@@ -14,12 +14,11 @@
 <!--    </div>-->
 
     <div th:each="post : ${posts}">
-        <a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a>
-        <h3 th:text="${post.body}"></h3>
+        <h4><a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a></h4>
+        <p th:text="${post.body}"></p>
 <!--        <p th:text="${post.user.id}"></p>-->
     </div>
 
-    <div th:replace="partials/footer.html :: footer"></div>
 
     <div th:replace="partials/footer.html :: footer"></div>
     <div th:replace="partials/scripts.html::scripts"></div>

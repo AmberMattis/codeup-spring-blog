@@ -1,14 +1,31 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="partials/head.html::head">
+    <title>Home</title>
 </head>
 <body>
 
+
     <div th:replace="partials/header.html :: navbar"></div>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img th:src="@{../static/img/spring-tractor.jpg}" alt="spring-backdrop">
+        </div>
+    </div>
     <h1>This is the Landing Page</h1>
 
 
-<div th:include="partials/footer.html :: footer"></div>
-<div th:replace="partials/scripts.html::scripts"></div>
+
+    <div th:include="partials/footer.html :: footer"></div>
+
+    <div th:replace="partials/scripts.html::scripts"></div>
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+        });
+    </script>
+
+
+
 </body>
 </html>
