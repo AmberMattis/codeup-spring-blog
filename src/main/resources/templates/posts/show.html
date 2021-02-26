@@ -1,11 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<head th:include="partials/head.html::head">
 </head>
 <body>
 
@@ -15,6 +10,8 @@
     <h3 th:text="${post.body}"></h3>
 
     <a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
+
     <div th:replace="partials/footer.html :: footer"></div>
+    <div th:replace="partials/scripts.html::scripts"></div>
 </body>
 </html>
