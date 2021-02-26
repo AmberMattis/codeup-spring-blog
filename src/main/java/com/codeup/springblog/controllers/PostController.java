@@ -61,6 +61,7 @@ public class PostController {
     @PostMapping("/posts/create")
     public String createForm(@ModelAttribute Post post) {
 
+//        User user = userService.getLoggedInUser();
         User user = usersDao.findAll().get(0);
         post.setUser(user);
         Post savedPost = postsDao.save(post);

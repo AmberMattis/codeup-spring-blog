@@ -25,6 +25,15 @@ public class User {
 
     public User(){}
 
+
+//    create a copy constructor in order to work with loggin in user objects
+    public User(User copy) {
+        this.id = copy.id;
+        this.username = copy.username;
+        this.password = copy.password;
+        this.email = copy.email;
+    }
+
     public User(Long id, String username, String email, String password){
         this.id = id;
         this.username = username;
