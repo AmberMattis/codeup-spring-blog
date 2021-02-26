@@ -5,6 +5,7 @@ import com.codeup.springblog.models.User;
 import com.codeup.springblog.repositories.PostRepository;
 import com.codeup.springblog.repositories.UserRepository;
 import com.codeup.springblog.services.EmailService;
+import com.codeup.springblog.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +18,16 @@ public class PostController {
     private final PostRepository postsDao;
     private final UserRepository usersDao;
     private final EmailService emailService;
+    private final UserService userService;
 
 //    Added the PostController constructor. When a property is final it
 //    must be added to a constructor for dependency injection
-    public PostController(PostRepository postDao, UserRepository usersDao, EmailService emailService) {
+    public PostController(PostRepository postDao, UserRepository usersDao, EmailService emailService, UserService userService) {
         this.postsDao = postDao;
         this.usersDao = usersDao;
         this.emailService = emailService;
 
+        this.userService = userService;
     }
 
 
@@ -61,8 +64,8 @@ public class PostController {
     @PostMapping("/posts/create")
     public String createForm(@ModelAttribute Post post) {
 
-//        User user = userService.getLoggedInUser();
-        User user = usersDao.findAll().get(0);
+       User user = userService.getLoggedInUser();
+
         post.setUser(user);
         Post savedPost = postsDao.save(post);
 

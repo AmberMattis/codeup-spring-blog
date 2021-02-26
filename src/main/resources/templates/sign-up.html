@@ -7,14 +7,13 @@
 <div th:replace="partials/header.html :: navbar"></div>
 
 
-<div class="container">d
+<div class="container">
     <h1>Register</h1>
     <div class="row">
         <form class="col s12" th:action="@{/sign-up}" method="POST" th:object="${user}">
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="username" id="username" type="text" class="validate" th:field="*{username}" />
-
                 </div>
             </div>
             <div class="row">

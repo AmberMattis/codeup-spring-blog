@@ -16,7 +16,6 @@ VALUE ( 'The Nice Blogger','Hello, I am the nice blogger, I hope you like my blo
       ( 'The Rude Blogger','I did not give you permission to read my blog. Go away now, you are not worthy...I said go away!');
 
 
-
 INSERT INTO users(id,email,username,password)
 VALUE ( 1, 'amber@email.com', 'amber', 'password');
 
