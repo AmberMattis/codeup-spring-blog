@@ -7,9 +7,12 @@
 
 
     <div th:replace="partials/header.html :: navbar"></div>
+    <div>
+        <h1>This is the landing page</h1>
+    </div>
     <div class="parallax-container">
         <div class="parallax">
-            <img th:src="@{../static/images/greenspring.jpg}" alt="spring-backdrop" class="responsive-img">
+            <img th:src="@{images/greenspring.jpg}" alt="spring-backdrop" class="responsive-img">
         </div>
         <h1>This is the Landing Page</h1>
     </div>
@@ -19,8 +22,9 @@
 
     <div th:include="partials/footer.html :: footer"></div>
 
-    <div th:replace="partials/scripts.html::scripts">
-    </div>
+    <div th:replace="partials/scripts.html::scripts"></div>
+
+
 
 
 
