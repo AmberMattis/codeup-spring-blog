@@ -4,23 +4,25 @@
 
 </head>
 <body>
-<h1>This is the edit page</h1>
+<div class="container">
+    <h1>This is the edit page</h1>
 
-<form th:action="@{|/posts/${post.id}/edit|}" th:method="POST">
-    <label for="title">Title</label>
-    <input id="title" type="text" name="title" th:value="${post.title}">
+    <form th:action="@{|/posts/${post.id}/edit|}" th:method="POST" th:object="${post}">
+        <label for="title">Title</label>
+        <input id="title" type="text" th:field="*{title}">
+    <!--   Specify the input is which would be the user-->
+        <input type="hidden" th:field="*{user}">
+        <label for="body">Body</label>
+        <textarea name="body" id="body" th:field="*{body}"></textarea>
+        <button type="submit">Update Post</button>
+    </form>
 
-    <label for="body">Body</label>
-    <textarea name="body" id="body" th:text="${post.body}"></textarea>
-
-    <button type="submit">Update Post</button>
-</form>
-
-<form th:action="@{|/posts/${post.id}/delete|}" th:method="POST">
-    <button>Delete Post</button>
+    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST">
+        <button>Delete Post</button>
+    </form>
 
     <div th:replace="partials/footer.html :: footer"></div>
     <div th:replace="partials/scripts.html::scripts"></div>
-</form>
+</div>
 </body>
 </html>
