@@ -6,9 +6,10 @@
 <body>
 
 
-<div th:replace="partials/header.html :: navbar"></div>
+
 
     <div class="parallax-container">
+        <div th:replace="partials/header.html :: navbar"></div>
         <div class="parallax">
             <img th:src="@{images/greenspring.jpg}" alt="spring-backdrop" class="responsive-img">
         </div>
@@ -16,7 +17,23 @@
     </div>
 
     <div>
-        <h1>This is the landing page</h1>
+        <h1 class="featured-posts-title">Featured Posts</h1>
+
+        <div class="row">
+            <div th:each="post : ${posts}">
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/images/sunflows.jpg" height="400">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title"><a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a></span>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="parallax-container">

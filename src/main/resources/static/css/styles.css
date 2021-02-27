@@ -7,11 +7,15 @@
 }
 
 .teal, .lighten-2 {
-    opacity: 50% !important;
+    opacity: 80% !important;
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
+    position: fixed !important;
+    top: 0 !important;
     width: 100%;
+}
+
+.featured-posts-title {
+    text-align: center !important;
 }
