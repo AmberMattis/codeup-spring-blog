@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<head th:include="partials/head.html::head"></head>-->
 <body>
-    <div class="teal lighten-2">
-        <nav class="teal lighten-2" th:fragment="navbar">
+    <div class="navbar-fixed teal lighten-2">
+        <nav class="navbar-fixed teal lighten-2" th:fragment="navbar">
             <ul class="head-txt">
                 <li><a th:href="@{/}">Home</a></li>
                 <li><a th:href="@{/roll-dice}">Roll Dice</a></li>

@@ -6,16 +6,25 @@
 <body>
 
 
-    <div th:replace="partials/header.html :: navbar"></div>
-    <div>
-        <h1>This is the landing page</h1>
-    </div>
+<div th:replace="partials/header.html :: navbar"></div>
+
     <div class="parallax-container">
         <div class="parallax">
             <img th:src="@{images/greenspring.jpg}" alt="spring-backdrop" class="responsive-img">
         </div>
-        <h1>This is the Landing Page</h1>
+        <h1 class="teal-text text-lighten-5" >Spring Blog</h1>
     </div>
+
+    <div>
+        <h1>This is the landing page</h1>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax">
+            <img th:src="@{images/spring-selfie.jpg}" alt="spring-backdrop" class="responsive-img">
+        </div>
+    </div>
+
 
 
 

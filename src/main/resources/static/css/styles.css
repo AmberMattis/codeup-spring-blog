@@ -5,3 +5,13 @@
 .parallax-container {
     height:500px;
 }
+
+.teal, .lighten-2 {
+    opacity: 50% !important;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
