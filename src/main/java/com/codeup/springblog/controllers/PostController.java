@@ -87,7 +87,7 @@ public class PostController {
     }
 
     @PostMapping("/posts/{id}/edit")
-    public String editPost(@PathVariable long id, @ModelAttribute Post post){
+    public String editPost(@ModelAttribute Post post){
 
         User user = userService.getLoggedInUser();
         User usersPost = post.getUser();
@@ -99,15 +99,11 @@ public class PostController {
 
     }
 
-
     @PostMapping("/posts/{id}/delete")
     public String deletePost(@PathVariable long id, @ModelAttribute Post post) {
-        User user = userService.getLoggedInUser();
-        User usersPost = post.getUser();
-
-        if(usersPost == user){
-            postsDao.deleteById(id);
-        }
+      if(post.getUser() == userService.getLoggedInUser()) {
+          postsDao.deleteById(id);
+      }
         return "redirect:/posts";
     }
 }

@@ -10,7 +10,7 @@
         <h2>Create A New Post</h2>
         <form th:action="@{/posts/create}" th:method="POST" th:object="${post}">
             <input id="title" name="title" placeholder="title" type="text" th:value="*{title}"/>
-            <textarea style="height: 300px" id="body" placeholder="your blog here" th:field="*{body}"></textarea>
+            <textarea style="height: 400px;" class="body-style" id="body" placeholder="your blog here" th:field="*{body}"></textarea>
             <button class="btn waves-effect waves-light" type="submit" name="action">Create Post
                 <i class="material-icons right">send</i>
             </button>

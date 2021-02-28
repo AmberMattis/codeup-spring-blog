@@ -13,13 +13,37 @@
     <!--   Specify the input is which would be the user-->
         <input type="hidden" th:field="*{user}">
         <label for="body">Body</label>
-        <textarea name="body" id="body" th:field="*{body}"></textarea>
-        <button type="submit">Update Post</button>
+        <textarea style="height: 400px;" class="body-style" name="body" id="body" th:field="*{body}"></textarea>
+        <button  class="waves-effect waves-light btn" type="submit">Update Post</button>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a>
     </form>
 
-    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST">
-        <button>Delete Post</button>
+    <!-- Modal Structure -->
+    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST" >
+        <div id="modal1" class="modal">
+
+            <div class="modal-content">
+                <h4>Are You Sure?</h4>
+                <p>You are about to delete<span class="red-text text-lighten-3" th:text="' ' + ${post.title}"></span></p>
+            </div>
+
+            <div class="modal-footer">
+              <button class="modal-close waves-effect waves-green btn-flat">Delete</button>
+            </div>
+
+        </div>
     </form>
+
+
+<!--    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST">-->
+<!--        <button>Delete Post</button>-->
+<!--    </form>-->
+
+
+
+
+
+
 
     <div th:replace="partials/footer.html :: footer"></div>
     <div th:replace="partials/scripts.html::scripts"></div>

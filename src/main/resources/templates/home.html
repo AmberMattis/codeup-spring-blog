@@ -11,7 +11,7 @@
     <div class="parallax-container">
         <div th:replace="partials/header.html :: navbar"></div>
         <div class="parallax">
-            <img th:src="@{images/greenspring.jpg}" alt="spring-backdrop" class="responsive-img">
+            <img th:src="@{images/bird-branch.jpg}" alt="spring-backdrop" class="responsive-img">
         </div>
         <h1 class="teal-text text-lighten-5" >Spring Blog</h1>
     </div>
@@ -21,7 +21,7 @@
 
         <div class="row">
             <div th:each="post : ${posts}">
-                <div class="col s12 m6 l4">
+                <div class="col s12 m4">
                     <div class="card">
                         <div class="card-image">
                             <img src="/images/sunflows.jpg" height="400">
