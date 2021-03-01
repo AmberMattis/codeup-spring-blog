@@ -6,49 +6,48 @@
 <body>
 
 
+<div th:replace="partials/header.html :: navbar"></div>
 
+        <div class="parallax-container">
 
-    <div class="parallax-container">
-        <div th:replace="partials/header.html :: navbar"></div>
-        <div class="parallax">
-            <img th:src="@{images/bird-branch.jpg}" alt="spring-backdrop" class="responsive-img">
+            <div class="parallax">
+                <img th:src="@{images/bird-branch.jpg}" alt="spring-backdrop" class="responsive-img">
+            </div>
+            <h1 class="teal-text text-lighten-5" >Spring Blog</h1>
         </div>
-        <h1 class="teal-text text-lighten-5" >Spring Blog</h1>
-    </div>
 
-    <div>
-        <h1 class="featured-posts-title">Featured Posts</h1>
+        <div>
+            <h1 class="featured-posts-title">Featured Posts</h1>
 
-        <div class="row">
-            <div th:each="post : ${posts}">
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="/images/sunflows.jpg" height="400">
+            <div class="row">
+                <div th:each="post : ${posts}">
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img style="padding: 7px" src="/images/blog2.jpg" height="300">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title"><a class="grey-text text-darken-3" th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a></span>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <span class="card-title"><a th:text="${post.title}" th:href="@{|/posts/${post.id}|}"></a></span>
-                        </div>
-                    </div>
-               </div>
+                   </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="parallax-container">
+            <div class="parallax">
+                <img th:src="@{images/spring-selfie.jpg}" alt="spring-backdrop" class="responsive-img">
             </div>
         </div>
 
-    </div>
-
-    <div class="parallax-container">
-        <div class="parallax">
-            <img th:src="@{images/spring-selfie.jpg}" alt="spring-backdrop" class="responsive-img">
-        </div>
-    </div>
 
 
 
 
-
-    <div th:include="partials/footer.html :: footer"></div>
-
-    <div th:replace="partials/scripts.html::scripts"></div>
+        <div th:include="partials/footer.html :: footer"></div>
+        <div th:replace="partials/scripts.html::scripts"></div>
 
 
 
