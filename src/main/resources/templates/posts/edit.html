@@ -19,7 +19,8 @@
     </form>
 
     <!-- Modal Structure -->
-    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST" >
+    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST">
+
         <div id="modal1" class="modal">
 
             <div class="modal-content">
@@ -30,6 +31,8 @@
             <div class="modal-footer">
               <button class="modal-close waves-effect waves-green btn-flat">Delete</button>
             </div>
+
+
 
         </div>
     </form>

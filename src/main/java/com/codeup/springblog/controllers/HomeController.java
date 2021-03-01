@@ -61,16 +61,16 @@ public class HomeController {
 
     @GetMapping("/")
     public String showFeaturedPosts(Model model){
-//        EasyRandom generator = new EasyRandom();
-//        List<Post> posts = generator.objects(Post.class, 3).collect(Collectors.toList());
-//        model.addAttribute("posts", posts);
-
-        List<Post> posts = new ArrayList<>();
-        posts.add(postsDao.getOne(1l));
-        posts.add(postsDao.getOne(2l));
-        posts.add(postsDao.getOne(3l));
-
+        EasyRandom generator = new EasyRandom();
+        List<Post> posts = generator.objects(Post.class, 3).collect(Collectors.toList());
         model.addAttribute("posts", posts);
+
+//        List<Post> posts = new ArrayList<>();
+//        posts.add(postsDao.getOne(1l));
+//        posts.add(postsDao.getOne(2l));
+//        posts.add(postsDao.getOne(3l));
+
+//        model.addAttribute("posts", posts);
         return "home";
 
     }
