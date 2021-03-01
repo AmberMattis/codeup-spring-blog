@@ -4,14 +4,12 @@ import com.codeup.springblog.models.Post;
 import com.codeup.springblog.models.User;
 import com.codeup.springblog.repositories.PostRepository;
 import com.codeup.springblog.repositories.UserRepository;
+import com.codeup.springblog.services.UserService;
 import org.jeasy.random.EasyRandom;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +22,13 @@ public class HomeController {
     private final UserRepository usersDao;
     private final PasswordEncoder encoder;
     private final PostRepository postsDao;
+    private final UserService userService;
 
-    public HomeController(UserRepository usersDao, PasswordEncoder encoder, PostRepository postsDao ){
+    public HomeController(UserRepository usersDao, PasswordEncoder encoder, PostRepository postsDao, UserService userService ){
         this.usersDao = usersDao;
         this.encoder = encoder;
         this.postsDao = postsDao;
+        this.userService = userService;
 
     }
 
@@ -37,12 +37,54 @@ public class HomeController {
 //
 //    public String main(){
 //        return "home";
+//    }    @GetMapping("/login")
+//    public String showLoginForm(){
+//        return "login";
+//    }
+//
+//    @PostMapping("/login")
+//    public String viewUserProfile(Model model, Post post, @PathVariable Long id) {
+//
+//
+//        User user = userService.getLoggedInUser();
+//        List<Post> usersPosts = (postsDao.findAllById(user.getId()));
+//
+//
+//
+//        model.addAttribute("user", user.getUsername());
+//        model.addAttribute("posts", usersPosts);
+//        return "redirect:/user";
 //    }
 
     @GetMapping("/login")
     public String showLoginForm(){
         return "login";
     }
+
+//    @PostMapping("/login")
+//    public String viewUserProfile(Model model, Post post, @PathVariable Long id) {
+//
+//
+//        User user = userService.getLoggedInUser();
+//        List<Post> usersPosts = (postsDao.findAllById());
+//
+//
+//
+//        model.addAttribute("user", user.getUsername());
+//        model.addAttribute("posts", usersPosts);
+//        return "redirect:/user";
+//    }
+
+
+
+
+
+//    @PostMapping("/user")
+//    public String showUserProfile(@ModelAttribute Model model ){
+//        User user = userService.getLoggedInUser();
+//        model.addAttribute("user", user);
+//        return"user";
+//    }
 
 
     @GetMapping("/sign-up")
