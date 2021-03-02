@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class PostController {
 
@@ -26,7 +29,6 @@ public class PostController {
         this.postsDao = postDao;
         this.usersDao = usersDao;
         this.emailService = emailService;
-
         this.userService = userService;
     }
 
@@ -101,6 +103,26 @@ public class PostController {
     public String deletePost(@PathVariable long id) {
         postsDao.deleteById(id);
         return "redirect:/posts";
+    }
+
+
+    @GetMapping("/user")
+    public String viewUserProfile(Model model)  {
+        User user = userService.getLoggedInUser();
+
+        List<Post> allPost = postsDao.findAll();
+        List<Post> usersPost = new ArrayList<>();
+
+        for(Post post : allPost) {
+            if (post.getUser().getId() == user.getId()){
+                usersPost.add(post);
+            }
+        }
+
+        model.addAttribute("user", user.getUsername());
+        model.addAttribute("posts", usersPost);
+
+        return "user";
     }
 
 }
