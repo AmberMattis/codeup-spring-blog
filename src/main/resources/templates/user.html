@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="partials/head.html::head"></head>
-<body>
-    <div th:replace="partials/header.html :: navbar"></div>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head th:include="partials/head.html::head"></head>-->
+<!--<body>-->
+<!--    <div th:replace="partials/header.html :: navbar"></div>-->
 
     <h1 th:text="'Welcome Back ' + ${user}"></h1>
+
 
     <div class="row">
         <div th:each="post : ${posts}">
@@ -22,7 +23,7 @@
         </div>
     </div>
 
-    <div th:include="partials/footer.html :: footer"></div>
-    <div th:replace="partials/scripts.html::scripts"></div>
-</body>
-</html>
+<!--    <div th:include="partials/footer.html :: footer"></div>-->
+<!--    <div th:replace="partials/scripts.html::scripts"></div>-->
+<!--</body>-->
+<!--</html>-->
