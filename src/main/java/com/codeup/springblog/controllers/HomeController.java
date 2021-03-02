@@ -32,60 +32,10 @@ public class HomeController {
 
     }
 
-//    @GetMapping("/")
-//
-//
-//    public String main(){
-//        return "home";
-//    }    @GetMapping("/login")
-//    public String showLoginForm(){
-//        return "login";
-//    }
-//
-//    @PostMapping("/login")
-//    public String viewUserProfile(Model model, Post post, @PathVariable Long id) {
-//
-//
-//        User user = userService.getLoggedInUser();
-//        List<Post> usersPosts = (postsDao.findAllById(user.getId()));
-//
-//
-//
-//        model.addAttribute("user", user.getUsername());
-//        model.addAttribute("posts", usersPosts);
-//        return "redirect:/user";
-//    }
-
     @GetMapping("/login")
-    public String showLoginForm(){
+    public String showLoginForm() {
         return "login";
     }
-
-//    @PostMapping("/login")
-//    public String viewUserProfile(Model model, Post post, @PathVariable Long id) {
-//
-//
-//        User user = userService.getLoggedInUser();
-//        List<Post> usersPosts = (postsDao.findAllById());
-//
-//
-//
-//        model.addAttribute("user", user.getUsername());
-//        model.addAttribute("posts", usersPosts);
-//        return "redirect:/user";
-//    }
-
-
-
-
-
-//    @PostMapping("/user")
-//    public String showUserProfile(@ModelAttribute Model model ){
-//        User user = userService.getLoggedInUser();
-//        model.addAttribute("user", user);
-//        return"user";
-//    }
-
 
     @GetMapping("/sign-up")
     public String showSignUpForm(Model model){

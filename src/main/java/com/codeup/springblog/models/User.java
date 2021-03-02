@@ -2,7 +2,6 @@ package com.codeup.springblog.models;
 
 import java.util.List;
 import javax.persistence.*;
-import java.awt.*;
 
 @Entity
 @Table(name="users")

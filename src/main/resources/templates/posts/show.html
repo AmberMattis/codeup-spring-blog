@@ -10,10 +10,6 @@
         <h1 th:text="${post.title}"></h1>
         <p th:text="${post.body}"></p>
         <h4 th:text="'Authored by: ' + ${post.user.username}"></h4>
-
-        <a th:href="@{|/posts/${post.id}/edit|}">Edit Post</a>
-
-
     </div>
 
     <div th:replace="partials/footer.html :: footer"></div>
