@@ -1,25 +1,24 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<!--<head th:include="partials/head.html::head"></head>-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <body>
     <div class="navbar-fixed teal lighten-2">
         <nav class="navbar-fixed orange lighten-2" th:fragment="navbar">
             <ul class="head-txt">
-                <li><a th:href="@{/}">Home</a></li>
-                <li><a th:href="@{/roll-dice}">Roll Dice</a></li>
-                <li><a th:href="@{/posts}">View Posts</a></li>
-                <li><a th:href="@{/posts/create}">Create Posts</a></li>
-                <li><a th:href="@{/login}">Login</a></li>
-                <li><a th:href="@{/sign-up}">Register</a></li>
-                <li><a th:href="@{/user}">Profile</a></li>
-                    <form th:action="@{/logout}" th:method="post">
+                <li sec:authorize="isAnonymous()"><a th:href="@{/}">Home</a></li>
+                <li sec:authorize="isAnonymous()"><a th:href="@{/roll-dice}">Roll Dice</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/posts}">View Posts</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/posts/create}">Create Posts</a></li>
+                <li sec:authorize="isAnonymous()"><a th:href="@{/login}">Login</a></li>
+                <li sec:authorize="isAnonymous()"><a th:href="@{/sign-up}">Register</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/user}">Profile</a></li>
+                    <form sec:authorize="isAuthenticated()" th:action="@{/logout}" th:method="post">
                         <button class="btn-link btn" style="margin-top: 0; background-color: transparent; box-shadow: none ">Logout</button>
                     </form>
                 </li>
             </ul>
         </nav>
     </div>
-
+<!--The div below is to be included in all views that will display a navbar-->
 <!--<div th:replace="partials/header.html :: navbar"></div>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
