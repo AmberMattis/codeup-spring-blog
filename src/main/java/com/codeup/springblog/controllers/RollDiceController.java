@@ -14,6 +14,7 @@ public class RollDiceController {
     }
 
 
+
     @GetMapping("roll-dice/{number}")
     public String selectOne(@PathVariable int number, Model model){
         int max = 6;
