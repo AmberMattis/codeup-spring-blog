@@ -113,6 +113,7 @@ public class PostController {
         List<Post> allPost = postsDao.findAll();
         List<Post> usersPost = new ArrayList<>();
 
+
         for(Post post : allPost) {
             if (post.getUser().getId() == user.getId()){
                 usersPost.add(post);
