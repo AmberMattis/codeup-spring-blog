@@ -1,23 +1,40 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="partials/head.html::head">
+    <style>
+        .div-background {
+            position: relative;
+            top: 100px;
+            background-color: white;
+            opacity: 80%;
+            height: 300px;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 1px 4px 8px -4px #000000;
 
+        }
+    </style>
 </head>
 
-<body>
+<body class="background" style="background: #ffd5cd">
+    <div class="head" th:replace="partials/header.html :: navbar"></div>
 
-<h2>You selected number <span th:text="${number}"></span></h2>
+    <div class="container" style="position: relative; top: 100px; background-color: white; opacity: 80%; height: 300px; padding: 30px; border-radius: 30px; box-shadow: 1px 4px 8px -4px #000000; ">
 
- <div th:if="${numMatch}">
-     <h3 id = correct>Congrats <span th:text="${number}"></span> was the correct answer</h3>
- </div>
+            <h2 class="heading" style="text-align: center; color: dimgray">You selected number <span th:text="${number}"></span></h2>
 
-<div th:unless="${numMatch}">
-    <h3 id="incorrect">Sorry the correct answer was <span th:text="${random}"></span></h3>
-</div>
+             <div th:if="${numMatch}">
+                 <h3 style="text-align: center; color: dimgray" id = correct>Congrats <span style="color: lightgreen" th:text="${number}"></span> was the correct answer</h3>
+             </div>
+
+            <div th:unless="${numMatch}">
+                <h3 style="text-align: center; color: dimgray" id="incorrect">Sorry the correct answer was <span style="color: indianred" th:text="${random}"></span></h3>
+            </div>
+    </div>
 
 
-<div th:replace="partials/footer.html :: footer"></div>
-<div th:replace="partials/scripts.html::scripts"></div>
+
+    <div style="position: absolute; top: 100%" th:replace="partials/footer.html :: footer"></div>
+    <div th:replace="partials/scripts.html::scripts"></div>
 </body>
 </html>

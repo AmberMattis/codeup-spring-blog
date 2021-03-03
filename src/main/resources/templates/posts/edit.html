@@ -15,7 +15,7 @@
         <label for="body">Body</label>
         <textarea style="height: 400px;" class="body-style" name="body" id="body" th:field="*{body}"></textarea>
         <button  class="waves-effect waves-light btn" type="submit">Update Post</button>
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete</a>
+        <a class="waves-effect waves-light modal-trigger" href="#modal1">Delete</a>
     </form>
 
     <!-- Modal Structure -->
@@ -36,17 +36,6 @@
 
         </div>
     </form>
-
-
-<!--    <form th:action="@{|/posts/${post.id}/delete|}" th:method="POST">-->
-<!--        <button>Delete Post</button>-->
-<!--    </form>-->
-
-
-
-
-
-
 
     <div th:replace="partials/footer.html :: footer"></div>
     <div th:replace="partials/scripts.html::scripts"></div>
