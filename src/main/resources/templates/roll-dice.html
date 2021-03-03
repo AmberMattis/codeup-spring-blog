@@ -2,20 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="partials/head.html::head"></head>
 
-<body>
+<body class="background">
     <div class="head" th:replace="partials/header.html :: navbar"></div>
+    <div class="container div-background ">
+       <h2 class="heading">Select A Number Between <span style="color: coral"><i class="fas fa-dice-one"></i></span> And <span style="color: coral"><i class="fas fa-dice-six"></i></span></h2>
+       <div class="row">
 
-        <h1>Select a number between 1 and 6</h1>
+                <ul>
+                    <li class="col s2"><a class="head-txt" th:href="@{/roll-dice/1}"><img class="dice-style" src="/images/dice-six-faces-one.png" height="100" width="100"></a></li>
+                    <li class="col s2"><a class="head-txt" th:href="@{/roll-dice/2}"><img class="dice-style"src="/images/dice-six-faces-two.png"></a></li>
+                    <li class="col s2"><a class="head-txt" th:href="@{/roll-dice/3}"><img class="dice-style"src="/images/dice-six-faces-three.png"></a></li>
+                    <li class="col s2"><a class="head-txt" th:href="@{/roll-dice/4}"><img class="dice-style"src="/images/dice-six-faces-four.png"></a></li>
+                    <li class="col s2"><a class="head-txt" th:href="@{/roll-dice/5}"><img class="dice-style"src="/images/dice-six-faces-five.png"></a></li>
+                    <li class="col s2"><a class="head-txt" th:href="@{/roll-dice/6}"><img class="dice-style"src="/images/dice-six-faces-six.png"></a></li>
+                </ul>
 
-        <ul class="head-txt">
-            <li><a class="head-txt" th:href="@{/roll-dice/1}">1</a></li>
-            <li><a class="head-txt" th:href="@{/roll-dice/2}">2</a></li>
-            <li><a class="head-txt" th:href="@{/roll-dice/3}">3</a></li>
-            <li><a class="head-txt" th:href="@{/roll-dice/4}">4</a></li>
-            <li><a class="head-txt" th:href="@{/roll-dice/5}">5</a></li>
-            <li><a class="head-txt" th:href="@{/roll-dice/6}">6</a></li>
-        </ul>
-
+       </div>
+    </div>
 
 
 
