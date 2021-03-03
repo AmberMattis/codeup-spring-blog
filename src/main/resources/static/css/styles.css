@@ -28,3 +28,35 @@ textarea {
     height: 400px !important;
 }
 
+.background {
+    background-color: #ffd5cd;
+    /*height: 500px;*/
+}
+
+.div-background {
+    position: relative;
+    top: 100px;
+    background-color: white;
+    opacity: 80%;
+    height: 300px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 1px 4px 8px -4px #000000;
+
+}
+
+.dice-style {
+    height: 100px !important;
+    width: 100px !important;
+}
+
+footer {
+    position: absolute;
+    top: 100%;
+}
+
+
+.heading {
+    text-align: center;
+    color: dimgrey;
+}
