@@ -9,16 +9,34 @@
 <div th:replace="partials/header.html :: navbar"></div>
 
         <div class="parallax-container">
+            <div class="parallax">
+                <img th:src="@{images/SPRING-BLOG.png}" alt="spring-backdrop" class="responsive-img">
+            </div>
+        </div>
 
+        <div class="text-container">
+            <div class="text-style">
+                <h1>About Spring Blog</h1>
+                <h5>Hello and Welcome to Spring Blog.</h5>
+                <h5>
+                    As you explore the homepage, you may notice an interesting theme. If you were thinking SPRING, you guessed it.
+                    You might be thinking this is a blog site dedicated to all things in the Spring season but in reality,
+                    the theme is just a nod to the framework used to build this site, Spring boot. You can blog about whatever
+                    inspires you. If reading and blogging is your thing, create an account and blog away or view posts from other
+                    spring bloggers on the site. Hope you enjoy!
+                </h5>
+            </div>
+        </div>
+
+
+        <div class="parallax-container">
             <div class="parallax">
                 <img th:src="@{images/bird-branch.jpg}" alt="spring-backdrop" class="responsive-img">
             </div>
-            <h1 class="teal-text text-lighten-5 spring-blog-title" >Spring Blog</h1>
         </div>
 
         <div class="para-style">
             <h1 class="featured-posts-title">Featured Posts</h1>
-
             <div class="row">
                 <div th:each="post : ${posts}">
                     <div class="col s12 m4">
@@ -33,7 +51,6 @@
                    </div>
                 </div>
             </div>
-
         </div>
 
         <div class="parallax-container">

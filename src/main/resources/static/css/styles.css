@@ -72,13 +72,25 @@ footer, .footer {
     color: dimgrey;
 }
 
-.para-style {
-    background-color: #f0f8ff;
-}
+
 /*.footer {*/
 /*    position: absolute;*/
 /*    top:100%;*/
 /*}*/
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+.text-style {
+    text-align: center;
+    color: dimgrey;
+}
 
 
 

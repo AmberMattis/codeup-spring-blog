@@ -37,6 +37,13 @@ public class HomeController {
         return "login";
     }
 
+//    @GetMapping("/login")
+//        public String showUserProfile(){
+//         userService.getLoggedInUser();
+//            return "redirect:/user";
+//        }
+
+
     @GetMapping("/sign-up")
     public String showSignUpForm(Model model){
         model.addAttribute("user", new User());
