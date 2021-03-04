@@ -1,7 +1,3 @@
-<h1 align="center" style="color: aquamarine">
-    Spring Blog 
-</h1>
-<hr style="height: 5px">
 
 ![Spring Banner](src/main/resources/static/images/SPRING-BLOG.png)
 
