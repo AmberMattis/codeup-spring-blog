@@ -4,6 +4,7 @@
 
 .parallax-container {
     height:500px;
+    display: flex;
 }
 
 .teal, .lighten-2 {
@@ -18,6 +19,13 @@
 
 .featured-posts-title {
     text-align: center !important;
+    /*font-family: 'Marck Script', cursive; !important;*/
+    color: dimgrey;
+
+}
+
+.spring-blog-title{
+    text-align: center;
 }
 
 .card {
@@ -50,9 +58,12 @@ textarea {
     width: 100px !important;
 }
 
-footer {
-    position: absolute;
-    top: 100%;
+footer, .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
 }
 
 
@@ -60,3 +71,14 @@ footer {
     text-align: center;
     color: dimgrey;
 }
+
+.para-style {
+    background-color: #f0f8ff;
+}
+/*.footer {*/
+/*    position: absolute;*/
+/*    top:100%;*/
+/*}*/
+
+
+
