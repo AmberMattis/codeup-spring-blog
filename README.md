@@ -27,7 +27,7 @@ The Spring Blog is a full stack application where blog enthusiasts can create th
 
 <h2 style="color:#ffd5cd;">Features</h2>
 
-<h5 style="color:lightblue">When a user visits the Spring Blog webpage.
+<h5 style="color:lightblue">When a user visits the Spring Blog webpage.</h5>
 <ul>
         <li>Landing page will appear</li>
         <li>User can view 3 randomly featured posts from the webpage</li>
