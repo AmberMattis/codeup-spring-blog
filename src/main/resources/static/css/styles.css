@@ -3,6 +3,10 @@ body{
     overflow: scroll;
 }
 
+.posts-align{
+    overflow: scroll;
+}
+
 .card-image{
     background-image: url("../images/greenspring.jpg") !important;
 }
