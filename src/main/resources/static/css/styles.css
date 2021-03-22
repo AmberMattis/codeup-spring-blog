@@ -75,6 +75,20 @@ footer, .footer {
     color: black;
 }
 
+.footer-list{
+    list-style-type: none;
+    display: flex;
+}
+
+.footer-list > li {
+    margin-left: 10px;
+    color: coral !important;
+}
+
+.footer-list > a {
+    color: darkcyan !important;
+
+}
 
 .heading {
     text-align: center;
