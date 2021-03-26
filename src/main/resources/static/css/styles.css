@@ -39,6 +39,7 @@ body{
 
 .card {
     margin-top: 50px;
+    border-radius: 20px;
 }
 
 textarea {
@@ -113,6 +114,10 @@ footer, .footer {
 .text-style {
     text-align: center;
     color: dimgrey;
+}
+
+img {
+    border-radius: 20px;
 }
 
 
